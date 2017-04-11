@@ -1,8 +1,9 @@
 package vs.productscanner.sensor;
 
+import vs.productscanner.product.ScannedProduct;
 import vs.productscanner.sensor.scanoption.ScanOption;
 
-public class Sensor {
+public abstract class Sensor {
 	private ScanOption scanOption;
 	
 	public Sensor(ScanOption scanOption){
@@ -15,4 +16,6 @@ public class Sensor {
 	public void setScanOption(ScanOption scanOption) {
 		this.scanOption = scanOption;
 	}
+	
+	public abstract ScannedProduct scan();;
 }
