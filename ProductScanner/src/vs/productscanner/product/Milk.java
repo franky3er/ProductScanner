@@ -27,4 +27,9 @@ public class Milk implements Product{
 	public void setAmmount(double ammount) {
 		this.ammount = ammount;
 	}
+
+	@Override
+	public void setAmmount(String ammount) {
+		this.setAmmount(Double.parseDouble(ammount));
+	}
 }
