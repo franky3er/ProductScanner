@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+<!ELEMENT products (product*)>
+<!ELEMENT product (name, unit, ammount)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT unit (#PCDATA)>
+<!ELEMENT ammount (#PCDATA)>
+]>
 
+<products>
+	<product>
+		<name>Milk</name>
+		<unit>Liter</unit>
+		<ammount>10.0</ammount>
+	</product>
+	<product>
+		<name>Eggs</name>
+		<unit>Eggs</unit>
+		<ammount>6</ammount>
+	</product>
+	<product>
+		<name>Butter</name>
+		<unit>Gramms</unit>
+		<ammount>500.0</ammount>
+	</product>
+	<product>
+		<name>Beer</name>
+		<unit>Liter</unit>
+		<ammount>6.5</ammount>
+	</product>
+</products>
