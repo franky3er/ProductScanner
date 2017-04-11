@@ -27,4 +27,9 @@ public class Butter implements Product{
 		this.ammount = ammount;
 	}
 
+	@Override
+	public void setAmmount(String ammount) {
+		this.setAmmount(Double.parseDouble(ammount));
+	}
+
 }

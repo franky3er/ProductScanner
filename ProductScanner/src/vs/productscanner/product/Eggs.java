@@ -26,6 +26,11 @@ public class Eggs implements Product{
 	public void setAmmount(int ammount) {
 		this.ammount = ammount;
 	}
+
+	@Override
+	public void setAmmount(String ammount) {
+		this.setAmmount(Integer.parseInt(ammount));
+	}
 	
 	 
 }

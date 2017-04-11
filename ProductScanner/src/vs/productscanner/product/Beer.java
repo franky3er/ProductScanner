@@ -26,5 +26,10 @@ public final static String PRODUCT_NAME = "Beer";
 	public void setAmmount(double ammount) {
 		this.ammount = ammount;
 	}
+
+	@Override
+	public void setAmmount(String ammount) {
+		this.setAmmount(Double.parseDouble(ammount));
+	}
 	
 }
