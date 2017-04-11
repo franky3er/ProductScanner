@@ -35,5 +35,10 @@ public class ScannedProduct implements Product {
 	public void setTimeStamp(Date timeStamp) {
 		this.timeStamp = timeStamp;
 	}
+
+	@Override
+	public void setAmmount(String ammount) {
+		this.product.setAmmount(ammount);
+	}
 	
 }
