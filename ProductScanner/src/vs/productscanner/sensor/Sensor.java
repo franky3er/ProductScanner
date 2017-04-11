@@ -17,5 +17,5 @@ public abstract class Sensor {
 		this.scanOption = scanOption;
 	}
 	
-	public abstract ScannedProduct scan();;
+	public abstract ScannedProduct scan();
 }
