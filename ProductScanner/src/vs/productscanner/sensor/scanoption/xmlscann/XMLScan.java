@@ -14,6 +14,11 @@ import vs.productscanner.product.Product;
 import vs.productscanner.product.ScannedProduct;
 import vs.productscanner.sensor.scanoption.ScanOption;
 
+/**
+ * Realises a scan over an XML File with saved product states. Only for simulation.
+ * @author franky3er
+ *
+ */
 public class XMLScan implements ScanOption{
 	private String productsFileSource;
 	private XMLReader xmlReader;
@@ -30,6 +35,7 @@ public class XMLScan implements ScanOption{
 	
 	@Override
 	public ScannedProduct scan(Product product) {
+		System.out.println("XMLScan.scan() for " + product.getName());
 		ScannedProduct scannedProduct = null;
 		this.xmlReader.setContentHandler(new ProductContentHandler(product));
 		try {
@@ -39,14 +45,16 @@ public class XMLScan implements ScanOption{
 			scannedProduct = new ScannedProduct(product);
 			scannedProduct.setTimeStamp(new Date());
 			
+			System.out.println(String.format("INFO : Successful scan : %s", scannedProduct.getStateAsString()));
+			
 		} catch (FileNotFoundException e) {
-			System.out.println("ERROR : File not found: " + this.productsFileSource);
+			System.err.println("ERROR : File not found: " + this.productsFileSource);
 			e.printStackTrace();
 		} catch (IOException e) {
-			System.out.println("ERROR : IOError");
+			System.err.println("ERROR : IOError");
 			e.printStackTrace();
 		} catch (SAXException e) {
-			System.out.println("ERROR : SaxParseError");
+			System.err.println("ERROR : SaxParseError");
 			e.printStackTrace();
 		}
 		
