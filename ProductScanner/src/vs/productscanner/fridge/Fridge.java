@@ -49,13 +49,25 @@ public class Fridge {
 		this.transmitter = transmitter;
 	}
 	
+	/**
+	 * Scanns all Sensors and add the outcoming scanned product to the scanned products list.
+	 * 
+	 * @author franky3er
+	 */
 	public void scan() {
+		System.out.println("INFO : All sensors scan()");
 		for(Sensor sensor : this.sensors) {
 			this.scannedProducts.add(sensor.scan());
 		}
 	}
 	
+	/**
+	 * Transmit all the saved scanned products via the TransmitOption implementation.
+	 * 
+	 * @author franky3er
+	 */
 	public void transmit() {
+		System.out.println("INFO : Transmit all scanned products");
 		this.transmitter.transmit(this.scannedProducts);
 	}
 }
