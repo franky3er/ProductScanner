@@ -17,12 +17,24 @@ public class ScannedProductTransmitter {
 		this.transmitOptions = transmitOptions;
 	}
 	
+	/**
+	 * Transmits all given scanned products depending on the implemented TransmitOption.
+	 * 
+	 * @author franky3er
+	 * @param scannedProducts
+	 */
 	public void transmit(List<ScannedProduct> scannedProducts){
 		for(ScannedProduct scannedProduct : scannedProducts) {
 			this.transmit(scannedProduct);
 		}
 	}
 	
+	/**
+	 * Transmits the given scanned product depending on the implemented TransmitOption.
+	 * 
+	 * @author franky3er
+	 * @param scannedProduct
+	 */
 	public void transmit(ScannedProduct scannedProduct) {
 		for(TransmitOption transmitOption : this.transmitOptions) {
 			transmitOption.transmit(scannedProduct);
