@@ -12,6 +12,7 @@ public class BeerSensor extends Sensor {
 
 	@Override
 	public ScannedProduct scan() {
+		System.out.println("INFO : BeerSensor.scan()");
 		return super.getScanOption().scan(new Beer());
 	}
 	

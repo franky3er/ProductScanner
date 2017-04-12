@@ -12,6 +12,7 @@ public class EggsSensor extends Sensor {
 
 	@Override
 	public ScannedProduct scan() {
+		System.out.println("INFO : ButterSensor.scan()");
 		return super.getScanOption().scan(new Eggs());
 	}
 

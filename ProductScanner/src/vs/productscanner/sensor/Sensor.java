@@ -17,5 +17,12 @@ public abstract class Sensor {
 		this.scanOption = scanOption;
 	}
 	
+	/**
+	 * Calls the scan() method from the depending ScanOption implementation and returns a scanned product.
+	 * Therefore it depends on the implementation of this class which Product is given as a parameter
+	 * to the scan() method of the ScanOption.
+	 * 
+	 * @return ScannedProduct
+	 */
 	public abstract ScannedProduct scan();
 }
