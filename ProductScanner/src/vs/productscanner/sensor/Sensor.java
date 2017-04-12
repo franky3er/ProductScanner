@@ -22,6 +22,7 @@ public abstract class Sensor {
 	 * Therefore it depends on the implementation of this class which Product is given as a parameter
 	 * to the scan() method of the ScanOption.
 	 * 
+	 * @author franky3er
 	 * @return ScannedProduct
 	 */
 	public abstract ScannedProduct scan();
