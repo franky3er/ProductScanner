@@ -9,6 +9,12 @@ import java.net.SocketException;
 import vs.productscanner.product.ScannedProduct;
 import vs.productscanner.transmitter.transmitoption.TransmitOption;
 
+/**
+ * This class implements a transmit via a datagram socket (UDP)
+ * 
+ * @author franky3er
+ *
+ */
 public class UDPTransmit implements TransmitOption {
 	
 	private DatagramSocket clientSocket;	
@@ -29,6 +35,7 @@ public class UDPTransmit implements TransmitOption {
 	@Override
 	public void transmit(ScannedProduct scannedProduct) {
 		String sendData = scannedProduct.getStateAsString();
+		System.out.println(String.format("INFO : UDPTransmit.transmit() : %s", sendData));
 		try {
 			clientSocket.send(new DatagramPacket(sendData.getBytes(), sendData.getBytes().length, destinationIP, destinationPort));
 		} catch (IOException e) {

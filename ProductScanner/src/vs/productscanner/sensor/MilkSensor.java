@@ -12,6 +12,7 @@ public class MilkSensor extends Sensor {
 
 	@Override
 	public ScannedProduct scan() {
+		System.out.println("INFO : MilkSensor.scan()");
 		return super.getScanOption().scan(new Milk());
 	}
 	
