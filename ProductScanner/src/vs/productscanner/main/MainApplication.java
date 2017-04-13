@@ -27,7 +27,11 @@ public class MainApplication {
 	private final static String PRODUCTSCANNER_TRANSMITTER_UDPTRANSMIT_DESTINATION_IP = "ProductScanner.transmitter.UDPTransmit.destination.ip";
 	private final static String PRODUCTSCANNER_TRANSMITTER_UDPTRANSMIT_DESTINATION_PORT = "ProductScanner.transmitter.UDPTransmit.destination.port";
 	
-	
+	/**
+	 * MAINAPPLICATION
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Fridge fridge = new Fridge();
 		try {
