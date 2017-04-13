@@ -8,18 +8,13 @@ import java.net.UnknownHostException;
 import java.util.Properties;
 
 import vs.productscanner.fridge.Fridge;
-import vs.productscanner.product.Milk;
-import vs.productscanner.product.Product;
-import vs.productscanner.product.ScannedProduct;
 import vs.productscanner.sensor.BeerSensor;
 import vs.productscanner.sensor.ButterSensor;
 import vs.productscanner.sensor.EggsSensor;
 import vs.productscanner.sensor.MilkSensor;
-import vs.productscanner.sensor.Sensor;
 import vs.productscanner.sensor.scanoption.ScanOption;
 import vs.productscanner.sensor.scanoption.xmlscann.XMLScan;
 import vs.productscanner.transmitter.ScannedProductTransmitter;
-import vs.productscanner.transmitter.transmitoption.TransmitOption;
 import vs.productscanner.transmitter.transmitoption.udp.UDPTransmit;
 
 public class MainApplication {
