@@ -35,7 +35,7 @@ public class XMLScan implements ScanOption{
 	
 	@Override
 	public ScannedProduct scan(Product product) {
-		System.out.println("XMLScan.scan() for " + product.getName());
+		System.out.println("INFO : XMLScan.scan() for " + product.getName());
 		ScannedProduct scannedProduct = null;
 		this.xmlReader.setContentHandler(new ProductContentHandler(product));
 		try {
