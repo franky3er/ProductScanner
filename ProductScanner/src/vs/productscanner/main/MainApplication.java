@@ -9,9 +9,12 @@ import vs.productscanner.fridge.Fridge;
 import vs.productscanner.product.Milk;
 import vs.productscanner.product.Product;
 import vs.productscanner.product.ScannedProduct;
+import vs.productscanner.sensor.BeerSensor;
+import vs.productscanner.sensor.ButterSensor;
 import vs.productscanner.sensor.EggsSensor;
 import vs.productscanner.sensor.MilkSensor;
 import vs.productscanner.sensor.Sensor;
+import vs.productscanner.sensor.scanoption.ScanOption;
 import vs.productscanner.sensor.scanoption.xmlscann.XMLScan;
 
 public class MainApplication {
@@ -51,7 +54,22 @@ public class MainApplication {
 	}
 
 	private static void initialize(Fridge fridge, Properties properties) {
-			
+		initializeSensors(fridge, properties);
+		initializeTransmitter(fridge, properties);
+	}
+
+	private static void initializeTransmitter(Fridge fridge, Properties properties) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void initializeSensors(Fridge fridge, Properties properties) {
+		System.out.println("INFO : Initialize Sensors");
+		ScanOption scanOption = new XMLScan(properties.getProperty(PRODUCTSCANNER_SENSOR_XMLSCAN_XMLSOURCE));
+		fridge.addSensor(new MilkSensor(scanOption));
+		fridge.addSensor(new BeerSensor(scanOption));
+		fridge.addSensor(new EggsSensor(scanOption));
+		fridge.addSensor(new ButterSensor(scanOption));
 	}
 
 	private static String getPathSeperator() {
