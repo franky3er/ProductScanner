@@ -1,6 +1,6 @@
 package vs.productscanner.transmitter.transmitoption;
 
-import vs.productscanner.product.ScannedProduct;
+import vs.products.ScannedProduct;
 
 public interface TransmitOption {
 	/**

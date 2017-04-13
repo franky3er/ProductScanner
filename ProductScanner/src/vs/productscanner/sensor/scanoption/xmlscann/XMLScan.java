@@ -10,8 +10,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import vs.productscanner.product.Product;
-import vs.productscanner.product.ScannedProduct;
+import vs.products.Product;
+import vs.products.ScannedProduct;
 import vs.productscanner.sensor.scanoption.ScanOption;
 
 /**

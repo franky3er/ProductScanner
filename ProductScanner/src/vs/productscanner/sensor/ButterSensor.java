@@ -1,7 +1,7 @@
 package vs.productscanner.sensor;
 
-import vs.productscanner.product.Butter;
-import vs.productscanner.product.ScannedProduct;
+import vs.products.Butter;
+import vs.products.ScannedProduct;
 import vs.productscanner.sensor.scanoption.ScanOption;
 
 public class ButterSensor extends Sensor {

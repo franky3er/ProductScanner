@@ -1,4 +1,4 @@
-package vs.productscanner.product;
+package vs.products;
 
 public class Eggs implements Product{
 	public final static String PRODUCT_NAME = "Eggs";

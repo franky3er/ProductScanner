@@ -1,7 +1,7 @@
 package vs.productscanner.sensor.scanoption;
 
-import vs.productscanner.product.Product;
-import vs.productscanner.product.ScannedProduct;
+import vs.products.Product;
+import vs.products.ScannedProduct;
 
 public interface ScanOption {
 	/**

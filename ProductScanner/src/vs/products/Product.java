@@ -1,4 +1,4 @@
-package vs.productscanner.product;
+package vs.products;
 
 public interface Product {
 	String getName();
