@@ -3,6 +3,8 @@ package vs.productscanner.main;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Properties;
 
 import vs.productscanner.fridge.Fridge;
@@ -16,6 +18,9 @@ import vs.productscanner.sensor.MilkSensor;
 import vs.productscanner.sensor.Sensor;
 import vs.productscanner.sensor.scanoption.ScanOption;
 import vs.productscanner.sensor.scanoption.xmlscann.XMLScan;
+import vs.productscanner.transmitter.ScannedProductTransmitter;
+import vs.productscanner.transmitter.transmitoption.TransmitOption;
+import vs.productscanner.transmitter.transmitoption.udp.UDPTransmit;
 
 public class MainApplication {
 
@@ -39,7 +44,7 @@ public class MainApplication {
 			System.err.println("ERROR : ProductScanner.properties not found");
 			e.printStackTrace();
 		} catch (IOException e) {
-			System.err.println("ERROR : Parsing ProductScanner.properties failed");
+			System.err.println("ERROR : IO");
 			e.printStackTrace();
 		}
 	}
@@ -53,14 +58,20 @@ public class MainApplication {
 		return properties;
 	}
 
-	private static void initialize(Fridge fridge, Properties properties) {
+	private static void initialize(Fridge fridge, Properties properties) throws NumberFormatException, UnknownHostException {
 		initializeSensors(fridge, properties);
 		initializeTransmitter(fridge, properties);
 	}
 
-	private static void initializeTransmitter(Fridge fridge, Properties properties) {
-		// TODO Auto-generated method stub
+	private static void initializeTransmitter(Fridge fridge, Properties properties) throws NumberFormatException, UnknownHostException {
+		System.out.println("INFO : Initialize Transmitter");
+		String destinationIP = properties.getProperty(PRODUCTSCANNER_TRANSMITTER_UDPTRANSMIT_DESTINATION_IP);
+		String destinationPort = properties.getProperty(PRODUCTSCANNER_TRANSMITTER_UDPTRANSMIT_DESTINATION_PORT);
 		
+		System.out.println(String.format("INFO : Create UDPTransmitter (%s:%s)", destinationIP, destinationPort));
+		ScannedProductTransmitter transmitter = new ScannedProductTransmitter();
+		transmitter.addTransmitOption(new UDPTransmit(InetAddress.getByName(destinationIP), Integer.parseInt(destinationPort)));
+		fridge.setTransmitter(transmitter);
 	}
 
 	private static void initializeSensors(Fridge fridge, Properties properties) {
