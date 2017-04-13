@@ -3,7 +3,7 @@ package vs.productscanner.transmitter;
 import java.util.ArrayList;
 import java.util.List;
 
-import vs.productscanner.product.ScannedProduct;
+import vs.products.ScannedProduct;
 import vs.productscanner.transmitter.transmitoption.TransmitOption;
 
 public class ScannedProductTransmitter {

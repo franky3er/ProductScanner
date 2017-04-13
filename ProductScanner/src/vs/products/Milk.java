@@ -1,19 +1,20 @@
-package vs.productscanner.product;
+package vs.products;
 
-public class Butter implements Product{
-	public final static String PRODUCT_NAME = "Butter";
+public class Milk implements Product{
+	public final static String PRODUCT_NAME = "Milk";
+	
 	private double ammount;
 	
 	@Override
 	public String getName() {
 		return PRODUCT_NAME;
 	}
-
+	
 	@Override
 	public String getUnit() {
-		return "Gramms";
+		return "Liter";
 	}
-
+	
 	@Override
 	public String getStateAsString() {
 		return String.format("%s;%s;%s", this.getName(), Double.toString(this.getAmmount()), getUnit());
@@ -31,5 +32,4 @@ public class Butter implements Product{
 	public void setAmmount(String ammount) {
 		this.setAmmount(Double.parseDouble(ammount));
 	}
-
 }

@@ -1,4 +1,4 @@
-package vs.productscanner.product;
+package vs.products;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

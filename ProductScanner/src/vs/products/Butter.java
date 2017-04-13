@@ -1,7 +1,7 @@
-package vs.productscanner.product;
+package vs.products;
 
-public class Beer implements Product{
-public final static String PRODUCT_NAME = "Beer";
+public class Butter implements Product{
+	public final static String PRODUCT_NAME = "Butter";
 	private double ammount;
 	
 	@Override
@@ -11,7 +11,7 @@ public final static String PRODUCT_NAME = "Beer";
 
 	@Override
 	public String getUnit() {
-		return "Liter";
+		return "Gramms";
 	}
 
 	@Override
@@ -31,5 +31,5 @@ public final static String PRODUCT_NAME = "Beer";
 	public void setAmmount(String ammount) {
 		this.setAmmount(Double.parseDouble(ammount));
 	}
-	
+
 }

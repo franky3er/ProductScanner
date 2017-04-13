@@ -5,7 +5,7 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 
-import vs.productscanner.product.Product;
+import vs.products.Product;
 
 public class ProductContentHandler implements ContentHandler{
 

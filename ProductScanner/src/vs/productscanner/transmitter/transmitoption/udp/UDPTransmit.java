@@ -6,7 +6,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 
-import vs.productscanner.product.ScannedProduct;
+import vs.products.ScannedProduct;
 import vs.productscanner.transmitter.transmitoption.TransmitOption;
 
 /**

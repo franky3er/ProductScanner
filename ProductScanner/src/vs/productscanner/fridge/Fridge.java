@@ -3,7 +3,7 @@ package vs.productscanner.fridge;
 import java.util.ArrayList;
 import java.util.List;
 
-import vs.productscanner.product.ScannedProduct;
+import vs.products.ScannedProduct;
 import vs.productscanner.sensor.Sensor;
 import vs.productscanner.transmitter.ScannedProductTransmitter;
 
